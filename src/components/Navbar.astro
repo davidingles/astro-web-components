@@ -3,8 +3,10 @@ import Home from '../components/Home.astro'
 
 const { menuPrincipal } = Astro.props
 ---
-<nav class="flex">
-    <Home></Home>
+<nav class="flex flex-row justify-between mt-4">
+    <div class="ml-4">
+        <Home />
+    </div>
     <ul class="flex flex-row gap-4 justify-end mr-4">
         {
             menuPrincipal.map( item => (

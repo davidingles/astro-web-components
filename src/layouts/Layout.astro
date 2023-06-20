@@ -27,7 +27,13 @@ const { title } = Astro.props
 			name='generator'
 			content={Astro.generator}
 		/>
+
 		<title>{title}</title>
+
+		<link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+  />
 	</head>
 	<body class="container bg-[#202020] text-zinc-100">
 		<slot />
@@ -156,4 +162,5 @@ const { title } = Astro.props
 		/* opcional */
 		-moz-osx-font-smoothing: grayscale;
 	}
+
 </style>
