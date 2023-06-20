@@ -1,0 +1,22 @@
+---
+const menuItems = {
+	Productos: 'productos',
+	Inicio: 'inicio',
+	Nosotros: 'about',
+}
+
+const menu = Object.entries(menuItems)
+console.log(menu)
+
+---
+<nav>
+    <ul class="flex flex-row gap-4 justify-end mr-4">
+        {
+            menu.map( item => (
+                <li>
+                    <a href={item[1]}>{item[0]}</a>
+                </li>
+            ))
+        }
+    </ul>
+</nav>
