@@ -1,18 +1,13 @@
 ---
-const menuItems = {
-	Productos: 'productos',
-	Inicio: 'inicio',
-	Nosotros: 'about',
-}
+import Home from '../components/Home.astro'
 
-const menu = Object.entries(menuItems)
-console.log(menu)
-
+const { menuPrincipal } = Astro.props
 ---
-<nav>
+<nav class="flex">
+    <Home></Home>
     <ul class="flex flex-row gap-4 justify-end mr-4">
         {
-            menu.map( item => (
+            menuPrincipal.map( item => (
                 <li>
                     <a href={item[1]}>{item[0]}</a>
                 </li>
