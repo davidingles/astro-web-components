@@ -3,19 +3,21 @@ import Layout from './Layout.astro';
 import Navbar from '../components/Navbar.astro'
 
 
-const menuItems = {
-	Productos: 'productos',
-	Inicio: 'inicio',
-	Nosotros: 'about',
-}
+// const menuItems = {
+// 	Productos: 'productos',
+// 	Inicio: 'inicio',
+// 	Nosotros: 'about',
+// 	Servicios: 'servicios'
+// }
 
-const menu = Object.entries(menuItems)
+// const menu: string[][] = Object.entries(menuItems)
 
 const { title } = Astro.props
 
 ---
 <Layout title={title}>
 
-    <Navbar menuPrincipal={menu}></Navbar>
+    <Navbar></Navbar>
 
+	<slot/>
 </Layout>

@@ -1,7 +1,15 @@
 ---
 import Home from '../components/Home.astro'
 
-const { menuPrincipal } = Astro.props
+// export interface Props {
+//     menu: string[][]
+// }
+
+const { menu } = Astro.props
+
+console.log(menu)
+
+const david = ['inicio', 'productos', 'about', 'servicios']
 ---
 <nav class="flex flex-row justify-between mt-4">
     <div class="ml-4">
@@ -9,11 +17,15 @@ const { menuPrincipal } = Astro.props
     </div>
     <ul class="flex flex-row gap-4 justify-end mr-4">
         {
-            menuPrincipal.map( item => (
-                <li>
-                    <a href={item[1]}>{item[0]}</a>
-                </li>
-            ))
+            david.map( (item) => {
+            return   <li>
+                    <a href={item}>{item}</a>
+                </li>}
+            )
+            
         }
     </ul>
 </nav>
+
+
+
