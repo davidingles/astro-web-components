@@ -5,15 +5,26 @@ import LayoutNavbar from '../layouts/LayoutNavbar.astro'
 
 <LayoutNavbar>
     
-    <div class="flex flex-wrap gap-8">
-        <Card url="/ej1.png" url2="/tel.svg"></Card>
-        <Card url="/diseño.png" url2="/tel.svg"></Card>
-        <Card url="/ej1.png" url2="/tel.svg"></Card>
-        <Card url="/ej1.png" url2="/tel.svg"></Card>
-    </div>
+    <main class="dav">
+        <div class="flex flex-wrap gap-8 div">
+            <Card url="/ej1.png" tel="Llámame: 999 555 333"></Card>
+            <Card url="/diseño.png" tel="Llámame 333 122 111"></Card>
+            <Card url="/ej1.png" tel="Llámame: 999 555 333"></Card>
+            <Card url="/ej1.png" tel="Llámame: 999 555 333"></Card>
+        </div>
+    </main>
 
 </LayoutNavbar>
 
 <style>
-
+    .dav{
+        border: solid 3px red;
+    }
+    .div{
+        display: flex;
+        border: solid 3px red;
+        justify-content: center;
+        align-items: center;
+        margin: auto;
+    }
 </style>

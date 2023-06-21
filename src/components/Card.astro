@@ -1,10 +1,13 @@
 ---
 export interface Props {
     url:string
-    url2:string
+    tel?:{
+        departamento: string,
+        telefono:string,
+    }
 }
 
-const { url, url2 } = Astro.props
+const { url, tel } = Astro.props
 ---
 
 
@@ -12,7 +15,7 @@ const { url, url2 } = Astro.props
 
 <article>
     <img src={url} alt="">
-    <img src={url2} alt="">
+    <div><p>{tel}</p></div>
 </article>
 
 <style>
@@ -20,33 +23,45 @@ const { url, url2 } = Astro.props
         position: relative;
         width: 333px;
         transition: all .3s ease;
-        /* border: solid 2px red; */
     }
 
-    article img:first-child{
+    article img{
         object-fit: cover;
         width: 100%;
         box-shadow: 1px 1px 5px 0px rgba(0,0,0,.5);
         border-radius: 1rem;
     }
 
-    article img:last-child{
+    article div{
+        color: black;
         position: absolute;
         width: 222px;
+        height: 112px;
         bottom: 0;
         left: 0;
         right: 0;
         margin: auto;
-        transform: translateY(33%);
+        transform: translateY(77%);
         opacity: 0;
         transition: all .3s ease;
+        /* border: solid 1px red; */
+    }
+    article div>p{
+        display: block;
+        width: 100%;
+        height: auto;
+        color: black;
+        white-space: nowrap;
+        /* font-size: 3rem; */
+        font-weight: bold;
+        text-shadow: -1px 0 var(--auxiliar1), 0 1px var(--auxiliar1), 1px 0 var(--auxiliar1), 0 -1px var(--auxiliar1);
     }
 
     article:hover{
         transform: perspective(222px) rotateX(10deg) translateY(-16%) translateZ(0);
     }
 
-    article:hover img:last-child{
+    article:hover div{
         opacity: 1;
         transform: translateY(0%);
     }
